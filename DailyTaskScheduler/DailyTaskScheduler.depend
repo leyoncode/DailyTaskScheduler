@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1617210025 source:d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\main.cpp
+	<iostream>
+
+1617210347 source:d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\src\consoleui.cpp
+	"ConsoleUI.h"
+
+1617211168 d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\include\consoleui.h
+	<vector>
+
+1617211483 source:d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\src\taskslist.cpp
+	"TasksList.h"
+
+1617211483 d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\include\taskslist.h
+
