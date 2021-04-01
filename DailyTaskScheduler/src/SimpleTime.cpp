@@ -26,9 +26,9 @@ void SimpleTime::SetTime(unsigned int hour, unsigned int minute)
 string SimpleTime::GetTime()
 {
     string time = "";
-    time += this->to_string(hour);
+    time += to_string(this->hour);
     time += ":";
-    time += this->to_string(minute);
+    time += to_string(this->minute);
 
     return time;
 }
@@ -36,9 +36,9 @@ string SimpleTime::GetTime()
 string SimpleTime::GetTime12()
 {
     string time = "";
-    time += this->to_string(hour-12);
+    time += to_string(this->hour-12);
     time += ":";
-    time += this->to_string(minute-12);
+    time += to_string(this->minute-12);
 
     if (this->hour >= 12)
     {
@@ -68,7 +68,7 @@ bool SimpleTime::operator>(SimpleTime compTime)
     {
         return true;
     }
-    else if (this->minute > compTime.GetMinute)
+    else if (this->minute > compTime.GetMinute())
     {
         return true;
     }
@@ -84,7 +84,7 @@ bool SimpleTime::operator<(SimpleTime compTime)
     {
         return true;
     }
-    else if (this->minute < compTime.GetMinute)
+    else if (this->minute < compTime.GetMinute())
     {
         return true;
     }

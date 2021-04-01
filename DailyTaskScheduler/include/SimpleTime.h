@@ -3,6 +3,8 @@
 
 #include <string>
 
+using namespace std;
+
 class SimpleTime
 {
     public:
@@ -16,7 +18,7 @@ class SimpleTime
         unsigned int GetHour();
         unsigned int GetMinute();
 
-        bool operator>(SimpleDate compTime); //overloading greater than operator. wil return true if rhs is greater than lhs
+        bool operator>(SimpleTime compTime); //overloading greater than operator. wil return true if rhs is greater than lhs
         bool operator<(SimpleTime compTime); ////overloading less than operator. wil return true if rhs is less than lhs
 
     protected:

@@ -31,11 +31,11 @@ string SimpleDate::GetDate()
 {
     string fullDate = "";
 
-    fullDate += to_string(dayOfMonth);
+    fullDate += to_string(this->dayOfMonth);
     fullDate += "-";
-    fullDate += to_string(month);
+    fullDate += to_string(this->month);
     fullDate += "-";
-    fullDate += to_string(year);
+    fullDate += to_string(this->year);
 
     return fullDate;
 }
