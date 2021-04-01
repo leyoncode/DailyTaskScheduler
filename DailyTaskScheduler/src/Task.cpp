@@ -30,6 +30,11 @@ void Task::SetEndHour(unsigned int hour, unsigned int minute)
     this->endHour.SetTime(hour, minute);
 }
 
+void Task::SetRegular(bool regularity)
+{
+    this->isRegularTask = regularity;
+}
+
 bool Task::IsRegularTask()
 {
     return this->isRegularTask;

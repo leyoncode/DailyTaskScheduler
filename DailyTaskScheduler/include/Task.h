@@ -16,8 +16,8 @@ class Task
         void SetDate(unsigned int dayOfMonth, unsigned int month, unsigned int year);
         void SetStartHour(unsigned int hour, unsigned int minute);
         void SetEndHour(unsigned int hour, unsigned int minute);
+        void SetRegular(bool regularity); //if set to true TaskList will extend the date to repeat it instead of deleting it.
         bool IsRegularTask(); //this is used by TaskList to see if this task is needed regularly.
-                              //TaskList will delete non regular tasks after date passed
 
     protected:
 
