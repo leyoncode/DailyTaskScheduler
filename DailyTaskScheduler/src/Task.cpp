@@ -24,3 +24,13 @@ void Task::SetStartHour(unsigned int hour, unsigned int minute)
 {
     this->startHour.SetTime(hour, minute);
 }
+
+void Task::SetEndHour(unsigned int hour, unsigned int minute)
+{
+    this->endHour.SetTime(hour, minute);
+}
+
+bool Task::IsRegularTask()
+{
+    return this->isRegularTask;
+}
