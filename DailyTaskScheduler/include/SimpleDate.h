@@ -13,13 +13,13 @@ class SimpleDate
         virtual ~SimpleDate();
 
         void SetDate(unsigned int dayOfMonth, unsigned int month, unsigned int year); //use this to change date
-        string GetDate();
+        string GetDate(); //returns date formatted as dd-mm-yyyy
         unsigned int GetDayOfMonth();
         unsigned int GetMonth();
         unsigned int GetYear();
 
-        bool operator>(SimpleDate compDate); //overloading greater than. wil return true if rhs is greater than lhs
-        bool operator<(SimpleDate compDate); ////overloading less than. wil return true if rhs is less than lhs
+        bool operator>(SimpleDate compDate); //overloading greater than operator. wil return true if rhs is greater than lhs
+        bool operator<(SimpleDate compDate); ////overloading less than operator. wil return true if rhs is less than lhs
 
     protected:
 

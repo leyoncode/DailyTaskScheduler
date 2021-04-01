@@ -2,6 +2,8 @@
 #define TASK_H
 
 #include <string>
+#include "SimpleDate.h"
+#include "SimpleTime.h"
 
 using namespace std;
 
@@ -21,9 +23,9 @@ class Task
 
     private:
         string taskName;
-        string date;
-        string startHour;
-        string endHour;
+        SimpleDate date;
+        SimpleTime startHour;
+        SimpleTime endHour;
         bool isRegularTask = false;
 };
 
