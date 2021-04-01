@@ -1,15 +1,34 @@
 # depslib dependency file v1.0
-1617210025 source:d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\main.cpp
+1617299465 source:d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\main.cpp
 	<iostream>
+	"SimpleDate.h"
 
 1617210347 source:d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\src\consoleui.cpp
 	"ConsoleUI.h"
 
-1617211168 d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\include\consoleui.h
-	<vector>
+1617292612 d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\include\consoleui.h
+	<string>
 
 1617211483 source:d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\src\taskslist.cpp
 	"TasksList.h"
 
-1617211483 d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\include\taskslist.h
+1617214530 d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\include\taskslist.h
+	<vector>
+
+1617292013 source:d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\src\task.cpp
+	"Task.h"
+
+1617297844 d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\include\task.h
+	<string>
+
+1617299716 d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\include\simpledate.h
+	<string>
+
+1617299318 source:d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\src\simpledate.cpp
+	"SimpleDate.h"
+
+1617299516 source:d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\src\simpletime.cpp
+	"SimpleTime.h"
+
+1617299516 d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\include\simpletime.h
 

@@ -1,6 +1,8 @@
 #ifndef CONSOLEUI_H
 #define CONSOLEUI_H
 
+#include <string>
+
 using namespace std;
 
 class ConsoleUI

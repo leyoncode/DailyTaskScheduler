@@ -35,10 +35,14 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/ConsoleUI.h" />
+		<Unit filename="include/SimpleDate.h" />
+		<Unit filename="include/SimpleTime.h" />
 		<Unit filename="include/Task.h" />
 		<Unit filename="include/TasksList.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/ConsoleUI.cpp" />
+		<Unit filename="src/SimpleDate.cpp" />
+		<Unit filename="src/SimpleTime.cpp" />
 		<Unit filename="src/Task.cpp" />
 		<Unit filename="src/TasksList.cpp" />
 		<Extensions>
