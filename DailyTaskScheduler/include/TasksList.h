@@ -1,7 +1,8 @@
 #ifndef TASKSLIST_H
 #define TASKSLIST_H
 
-#include<vector>
+#include <vector>
+#include "Task.h"
 
 class TasksList
 {
@@ -12,6 +13,7 @@ class TasksList
     protected:
 
     private:
+        vector<Task> tasksList;
 };
 
 #endif // TASKSLIST_H
