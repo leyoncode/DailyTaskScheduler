@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1617299809 source:d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\main.cpp
+1617352291 source:d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\main.cpp
 	<iostream>
 
 1617210347 source:d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\src\consoleui.cpp
@@ -11,18 +11,19 @@
 1617211483 source:d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\src\taskslist.cpp
 	"TasksList.h"
 
-1617214530 d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\include\taskslist.h
+1617348797 d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\include\taskslist.h
 	<vector>
-
-1617302045 source:d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\src\task.cpp
 	"Task.h"
 
-1617301964 d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\include\task.h
+1617303137 source:d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\src\task.cpp
+	"Task.h"
+
+1617350570 d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\include\task.h
 	<string>
 	"SimpleDate.h"
 	"SimpleTime.h"
 
-1617301412 d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\include\simpledate.h
+1617345117 d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\include\simpledate.h
 	<string>
 
 1617302177 source:d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\src\simpledate.cpp
@@ -33,4 +34,19 @@
 
 1617302088 d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\include\simpletime.h
 	<string>
+
+1617351079 source:d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\src\getdatetime.cpp
+	"GetDateTime.h"
+
+1617351096 d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\include\getdatetime.h
+	<time.h>
+
+1617292617 d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\include\time.h
+	<string>
+
+1617358973 source:d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\src\simplegetdatetime.cpp
+	"SimpleGetDateTime.h"
+
+1617358984 d:\projects\prototype projects\dailytaskscheduler\dailytaskscheduler\include\simplegetdatetime.h
+	<time.h>
 
