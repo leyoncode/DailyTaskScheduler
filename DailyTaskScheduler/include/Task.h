@@ -11,6 +11,8 @@ class Task
 {
     public:
         Task(string taskName);
+        Task(string taskName, DaysOfWeek scheduledDay); //use this constructor for regular task
+        Task(string taskName, unsigned int dayOfMonth, unsigned int month, unsigned int year); //use this constructor for one time task
         virtual ~Task();
         void SetName(string taskName);
         void SetDate(unsigned int dayOfMonth, unsigned int month, unsigned int year);
@@ -24,8 +26,8 @@ class Task
     private:
         string taskName;
         SimpleDate date;
-        SimpleTime startHour;
-        SimpleTime endHour;
+        SimpleTime startHour; //optional
+        SimpleTime endHour;   //optional
         bool isRegularTask = false;
 };
 
