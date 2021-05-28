@@ -11,6 +11,7 @@ class SimpleDate
 {
     public:
         SimpleDate();
+        SimpleDate(DaysOfWeek dayOfWeek);
         SimpleDate(unsigned int dayOfMonth, unsigned int month, unsigned int year);
         virtual ~SimpleDate();
 

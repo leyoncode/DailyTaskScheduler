@@ -5,6 +5,15 @@ SimpleDate::SimpleDate()
     this->dayOfMonth = 0;
     this->month = 0;
     this->year = 0;
+    this->day = DaysOfWeek::SUN;
+}
+
+SimpleDate::SimpleDate(DaysOfWeek dayOfWeek)
+{
+    this->dayOfMonth = 0;
+    this->month = 0;
+    this->year = 0;
+    this->day = dayOfWeek;
 }
 
 SimpleDate::SimpleDate(unsigned int dayOfMonth, unsigned int month, unsigned int year)
@@ -12,6 +21,7 @@ SimpleDate::SimpleDate(unsigned int dayOfMonth, unsigned int month, unsigned int
     this->dayOfMonth = dayOfMonth;
     this->month = month;
     this->year = year;
+    SetDay(dayOfMonth, month, year);
 }
 
 SimpleDate::~SimpleDate()

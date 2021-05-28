@@ -5,6 +5,20 @@ Task::Task(string taskName)
     this->taskName = taskName;
 }
 
+Task::Task(string taskName, Repeat repeat, DaysOfWeek scheduledDay)
+{
+    this->taskName = taskName;
+    this->repeat = repeat;
+    this->date.SetDay(scheduledDay);
+}
+
+Task::Task(string taskName, unsigned int dayOfMonth, unsigned int month, unsigned int year, Repeat repeat)
+{
+    this->taskName = taskName;
+    this->repeat = repeat;
+    this->date.SetDate(dayOfMonth, month, year);
+}
+
 Task::~Task()
 {
     //dtor
@@ -30,12 +44,24 @@ void Task::SetEndHour(unsigned int hour, unsigned int minute)
     this->endHour.SetTime(hour, minute);
 }
 
-void Task::SetRegular(bool regularity)
+void Task::SetRepeat(Repeat repeat)
 {
-    this->isRegularTask = regularity;
+    this->repeat = repeat;
 }
 
-bool Task::IsRegularTask()
+Repeat Task::GetRepeat()
 {
-    return this->isRegularTask;
+    return this->repeat;
+}
+
+bool Task::IsRepeatingTask()
+{
+    if (repeat == Repeat::RepeatNever)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
 }
