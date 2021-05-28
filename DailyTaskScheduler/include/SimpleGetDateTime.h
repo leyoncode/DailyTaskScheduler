@@ -2,6 +2,8 @@
 #define GETDATETIME_H
 
 #include <time.h>
+#include "SimpleDate.h"
+#include "SimpleTime.h"
 
 using namespace std;
 
@@ -19,6 +21,9 @@ class SimpleGetDateTime
         static unsigned int GetYear();
         static unsigned int GetHour();
         static unsigned int GetMinute();
+
+        static SimpleDate GetSimpleDate();
+        static SimpleTime GetSimpleTime();
 
     protected:
 

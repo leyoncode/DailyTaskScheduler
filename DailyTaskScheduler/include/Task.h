@@ -24,6 +24,9 @@ class Task
         void SetRepeat(Repeat repeat); //if set to true TaskList will extend the date to repeat it instead of deleting it.
         Repeat GetRepeat(); //see how often this task is set to repeat
         bool IsRepeatingTask(); //this is used by TaskList to see if this task is needed regularly.
+        SimpleDate GetDate();
+        SimpleTime GetStartHour();
+        SimpleTime GetEndHour();
 
     protected:
 

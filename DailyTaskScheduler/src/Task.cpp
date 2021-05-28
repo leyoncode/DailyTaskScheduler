@@ -65,3 +65,18 @@ bool Task::IsRepeatingTask()
         return true;
     }
 }
+
+SimpleDate Task::GetDate()
+{
+    return this->date;
+}
+
+SimpleTime Task::GetStartHour()
+{
+    return this->startHour;
+}
+
+SimpleTime Task::GetEndHour()
+{
+    return this->endHour;
+}
