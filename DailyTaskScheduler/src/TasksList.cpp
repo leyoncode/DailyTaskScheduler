@@ -20,10 +20,31 @@ void TasksList::ReviseTasks()
     for (int i = 0; i < this->tasksList.size(); i++)
     {
         Task tmp = this->tasksList[i];
-        if ( tmp.GetRepeat() == Repeat::RepeatNever)
+        SimpleDate tmpDate = tmp.GetDate();
+
+        if (tmpDate < SimpleGetDateTime::GetSimpleDate())
         {
-            SimpleDate tmpDate = tmp.GetDate();
-            //if (tmpDate.GetYear )
+            //check if the date for the Task is older than today
+            if ( tmp.GetRepeat() == Repeat::RepeatNever)
+            {
+                tasksList.erase( tasksList.begin() + i ); //delete this Task that was just inspected
+            }
+            else if (tmp.GetRepeat() == Repeat::RepeatDaily)
+            {
+                  //set next date
+            }
+            else if (tmp.GetRepeat() == Repeat::RepeatWeekly)
+            {
+                  //set next date
+            }
+            else if (tmp.GetRepeat() == Repeat::RepeatMonthly)
+            {
+                  //set next date
+            }
+            else if (tmp.GetRepeat() == Repeat::RepeatYearly)
+            {
+                  //set next date
+            }
         }
     }
 }
