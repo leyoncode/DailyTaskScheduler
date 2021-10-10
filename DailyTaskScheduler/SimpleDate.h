@@ -1,11 +1,10 @@
-#ifndef SIMPLEDATE_H
-#define SIMPLEDATE_H
+#pragma once
 
 #include <string>
 
 using namespace std;
 
-enum class DaysOfWeek {SUN, MON, TUE, WED, THU, FRI, SAT};
+enum class DaysOfWeek { SUN, MON, TUE, WED, THU, FRI, SAT };
 
 class SimpleDate
 {
@@ -36,4 +35,3 @@ class SimpleDate
         DaysOfWeek day;
 };
 
-#endif // SIMPLEDATE_H

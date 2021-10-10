@@ -1,5 +1,4 @@
-#ifndef SIMPLETIME_H
-#define SIMPLETIME_H
+#pragma once
 
 #include <string>
 
@@ -28,4 +27,3 @@ class SimpleTime
         unsigned int minute;
 };
 
-#endif // SIMPLETIME_H

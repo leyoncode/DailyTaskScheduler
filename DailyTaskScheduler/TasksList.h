@@ -1,7 +1,7 @@
-#ifndef TASKSLIST_H
-#define TASKSLIST_H
+#pragma once
 
 #include <vector>
+#include <string>
 
 #include "Task.h"
 #include "SimpleGetDateTime.h"
@@ -15,7 +15,8 @@ class TasksList
         virtual ~TasksList();
 
         void InsertTask(Task newTask);
-        void ReviseTasks(); //this will delete old tasks that are no longer needed and renew tasks that are needed regularly
+        void DeleteOldTasks();
+        void DeleteTask(Task deleteTask);
 
     protected:
 
@@ -24,4 +25,3 @@ class TasksList
         vector<int> a;
 };
 
-#endif // TASKSLIST_H

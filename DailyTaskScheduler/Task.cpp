@@ -24,6 +24,11 @@ Task::~Task()
     //dtor
 }
 
+string Task::GetName()
+{
+    return this->taskName;
+}
+
 void Task::SetName(string taskName)
 {
     this->taskName = taskName;

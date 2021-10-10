@@ -36,9 +36,9 @@ string SimpleTime::GetTime()
 string SimpleTime::GetTime12()
 {
     string time = "";
-    time += to_string(this->hour-12);
+    time += to_string(this->hour - 12);
     time += ":";
-    time += to_string(this->minute-12);
+    time += to_string(this->minute - 12);
 
     if (this->hour >= 12)
     {

@@ -1,5 +1,4 @@
-#ifndef TASK_H
-#define TASK_H
+#pragma once
 
 #include <string>
 #include "SimpleDate.h"
@@ -7,7 +6,7 @@
 
 using namespace std;
 
-enum class Repeat {RepeatNever, RepeatDaily, RepeatWeekly, RepeatMonthly, RepeatYearly};
+enum class Repeat { RepeatNever, RepeatDaily, RepeatWeekly, RepeatMonthly, RepeatYearly };
 
 class Task
 {
@@ -21,9 +20,10 @@ class Task
         void SetDate(unsigned int dayOfMonth, unsigned int month, unsigned int year); //set next repeat date
         void SetStartHour(unsigned int hour, unsigned int minute); //set next repeat start hour
         void SetEndHour(unsigned int hour, unsigned int minute);   //set next repeat end hour
-        void SetRepeat(Repeat repeat); //if set to true TaskList will extend the date to repeat it instead of deleting it.
+        void SetRepeat(Repeat repeat); //if set to repeat TaskList will extend the date to repeat it instead of deleting it.
         Repeat GetRepeat(); //see how often this task is set to repeat
         bool IsRepeatingTask(); //this is used by TaskList to see if this task is needed regularly.
+        string GetName();
         SimpleDate GetDate();
         SimpleTime GetStartHour();
         SimpleTime GetEndHour();
@@ -38,4 +38,3 @@ class Task
         Repeat repeat = Repeat::RepeatNever;
 };
 
-#endif // TASK_H

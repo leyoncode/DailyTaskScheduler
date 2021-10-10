@@ -47,7 +47,7 @@ void SimpleDate::SetDay(unsigned int dayOfMonth, unsigned int month, unsigned in
     //Sakamoto's method of finding day from date
     const int t[] = { 0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4 };
     year -= month < 3;
-    int day = ( year + year / 4 - year / 100 + year / 400 + t[month - 1] + dayOfMonth) % 7;
+    int day = (year + year / 4 - year / 100 + year / 400 + t[month - 1] + dayOfMonth) % 7;
 
     this->day = (DaysOfWeek)day;
 }

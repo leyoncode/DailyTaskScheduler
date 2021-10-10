@@ -1,5 +1,5 @@
-#ifndef GETDATETIME_H
-#define GETDATETIME_H
+#pragma once
+#pragma warning(disable : 4996) //_CRT_SECURE_NO_WARNINGS
 
 #include <time.h>
 #include "SimpleDate.h"
@@ -24,10 +24,10 @@ class SimpleGetDateTime
 
         static SimpleDate GetSimpleDate();
         static SimpleTime GetSimpleTime();
+        //static SimpleDate GetDateAfter(unsigned int days, unsigned int months, unsigned int years); //give date after x days, y months, z years
 
     protected:
 
     private:
 };
 
-#endif // GETDATETIME_H
