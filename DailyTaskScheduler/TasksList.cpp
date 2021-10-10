@@ -36,15 +36,12 @@ void TasksList::DeleteOldTasks()
         SimpleDate tmpDate = tmpItem.GetDate();
 
         //check if the date for the Task is older than today
-        if (tmpDate < SimpleGetDateTime::GetSimpleDate())
+        if (tmpItem.IsRepeatingTask() == false && tmpDate < SimpleGetDateTime::GetSimpleDate())
         {
-            if (tmpItem.GetRepeat() == Repeat::RepeatNever)
-            {
-                //delete this old task that was just inspected
-                tasksList.erase(tasksList.begin() + i);
-            }
-        }
-    }
+            //delete this old task that was just inspected
+            tasksList.erase(tasksList.begin() + i);
+        }  
+    } 
 }
 
 void TasksList::DeleteTask(Task deleteTask)
@@ -60,4 +57,52 @@ void TasksList::DeleteTask(Task deleteTask)
 
         i++;
     }
+}
+
+vector<Task> TasksList::GetTasksForToday()
+{
+    vector<Task> todaysTasks;
+
+    DeleteOldTasks();
+
+    for (Task task : tasksList)
+    {
+        if (task.IsRepeatingTask())
+        {
+            switch (task.GetRepeat()) 
+            {
+                case Repeat::RepeatDaily:
+                    todaysTasks.push_back(task);
+                    break;
+                case Repeat::RepeatWeekly:
+                    if (SimpleGetDateTime::GetSimpleDate().GetDay() == task.GetDate().GetDay())
+                    {
+                        todaysTasks.push_back(task);
+                    }
+                    break;
+                case Repeat::RepeatMonthly:
+                    if (SimpleGetDateTime::GetSimpleDate().GetDay() == task.GetDate().GetDay())
+                    {
+                        todaysTasks.push_back(task);
+                    }
+                    break;
+                case Repeat::RepeatYearly:
+                    if (SimpleGetDateTime::GetSimpleDate().GetDay() == task.GetDate().GetDay() && SimpleGetDateTime::GetSimpleDate().GetMonth() == task.GetDate().GetMonth())
+                    {
+                        todaysTasks.push_back(task);
+                    }
+                    break;
+            }
+        }
+        else //Repeat::RepeatNever
+        {
+            if (task.GetDate() == SimpleGetDateTime::GetSimpleDate())
+            {
+                todaysTasks.push_back(task);
+            }
+        }
+    }
+
+    return todaysTasks;
+    
 }

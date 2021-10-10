@@ -8,12 +8,28 @@ using namespace std;
 
 enum class Repeat { RepeatNever, RepeatDaily, RepeatWeekly, RepeatMonthly, RepeatYearly };
 
+/*
+* Task - Specification & How to use
+* =================================================================================
+* RepeatNever   - Set fixed date to repeat once only.
+* RepeatDaily   - No need to set date.
+* RepeatWeekly  - Set fixed DaysOfWeek (defined in SimpleDate) to repeat on that day every week.
+* RepeatMonthly - Set fixed dayOfMonth and repeat on that dayOfMonth every month.
+* RepeatYearly  - Set fixed dayOfMonth and month and repeat on that dayOfMonth and month every year.
+* 
+* *Time is optional, day/date and repeat option is mandatory to be filled.
+* **WARNING trying to call functions beyond how this class is specified will result in false values and errors
+*/
+
 class Task
 {
     public:
-        Task(string taskName); //use this constructor for repeating task daily
-        Task(string taskName, Repeat repeat, DaysOfWeek scheduledDay); //use this constructor for repeating task weekly
-        Task(string taskName, unsigned int dayOfMonth, unsigned int month, unsigned int year, Repeat repeat = Repeat::RepeatNever); //use this constructor for one time task or the ones that repeat monthly or yearly
+        //Different constructors to match different Repeat conditions
+        Task(string taskName, unsigned int dayOfMonth, unsigned int month, unsigned int year); //RepeatNever
+        Task(string taskName); //RepeatDaily
+        Task(string taskName, DaysOfWeek dayOfWeek); //RepeatWeekly
+        Task(string taskName, unsigned int dayOfMonth); //RepeatMonthly
+        Task(string taskName, unsigned int dayOfMonth, unsigned int month); //RepeatYearly
         virtual ~Task();
 
         void SetName(string taskName);
@@ -31,10 +47,10 @@ class Task
     protected:
 
     private:
-        string taskName;
-        SimpleDate date;
+        string taskName; //mandatory
+        SimpleDate date; //mandatory
         SimpleTime startHour; //optional
         SimpleTime endHour;   //optional
-        Repeat repeat = Repeat::RepeatNever;
+        Repeat repeat = Repeat::RepeatNever; //mandatory. set in constructor
 };
 

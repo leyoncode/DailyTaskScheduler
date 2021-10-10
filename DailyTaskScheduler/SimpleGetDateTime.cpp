@@ -55,7 +55,8 @@ SimpleDate SimpleGetDateTime::GetSimpleDate()
     time_t now = time(0);
     tm* localTime = localtime(&now);
 
-    SimpleDate newCurrentDate(localTime->tm_mday,
+    SimpleDate newCurrentDate(
+        localTime->tm_mday,
         localTime->tm_mon + 1,
         localTime->tm_year + 1900
     );

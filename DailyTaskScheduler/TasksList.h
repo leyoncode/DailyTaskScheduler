@@ -18,10 +18,11 @@ class TasksList
         void DeleteOldTasks();
         void DeleteTask(Task deleteTask);
 
+        vector<Task> GetTasksForToday();
+
     protected:
 
     private:
         vector<Task> tasksList;
-        vector<int> a;
 };
 
