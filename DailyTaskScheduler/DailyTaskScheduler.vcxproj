@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleUI.cpp" />
+    <ClCompile Include="DataStorage.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="SimpleDate.cpp" />
     <ClCompile Include="SimpleGetDateTime.cpp" />
@@ -149,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConsoleUI.h" />
+    <ClInclude Include="DataStorage.h" />
     <ClInclude Include="SimpleDate.h" />
     <ClInclude Include="SimpleGetDateTime.h" />
     <ClInclude Include="SimpleTime.h" />

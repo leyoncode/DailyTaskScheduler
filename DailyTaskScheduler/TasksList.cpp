@@ -92,6 +92,8 @@ vector<Task> TasksList::GetTasksForToday()
                         todaysTasks.push_back(task);
                     }
                     break;
+                //default:
+                    //task not setup as per specification if come to default
             }
         }
         else //Repeat::RepeatNever
@@ -105,4 +107,14 @@ vector<Task> TasksList::GetTasksForToday()
 
     return todaysTasks;
     
+}
+
+vector<Task> TasksList::GetAllTasks()
+{
+    return this->tasksList;
+}
+
+void TasksList::SetTaskList(vector<Task> taskList)
+{
+    this->tasksList = taskList;
 }

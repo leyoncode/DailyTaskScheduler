@@ -19,6 +19,9 @@ class TasksList
         void DeleteTask(Task deleteTask);
 
         vector<Task> GetTasksForToday();
+        vector<Task> GetAllTasks();
+
+        void SetTaskList(vector<Task> taskList);
 
     protected:
 
