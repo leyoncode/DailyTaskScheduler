@@ -14,6 +14,7 @@ void ConsoleUI::StartApp()
 {
 	ShowHeader();
 	ShowMenu();
+	return HandleMenuSelection();
 }
 
 void ConsoleUI::ShowHeader()
@@ -36,29 +37,35 @@ void ConsoleUI::ShowMenu()
 
 void ConsoleUI::HandleMenuSelection()
 {
-	cout << "#> " << endl;
-
 	while (true)
 	{
-		int selection;
+		cout << "#> ";
+
 		//get input for menu item selection
-		cin >> selection;
+		int selection = getPositiveIntInput();
+		
 		//check if valid input and go to entry
 		if (selection > 0 && selection <= 6)
 		{
 			switch (selection)
 			{
 				case 1:
+					ShowTasksForToday();
 					break;
 				case 2:
+					ShowNewTaskCreator();
 					break;
 				case 3:
+					ShowAllTasks();
 					break;
 				case 4:
+					ShowSettings();
 					break;
 				case 5:
+					ShowHelp();
 					break;
 				case 6:
+					ExitApp();
 					break;
 			}
 		}
@@ -69,10 +76,73 @@ void ConsoleUI::HandleMenuSelection()
 	}
 }
 
-void ConsoleUI::ShowTasksForToday()
+void ConsoleUI::ResetConsoleView()
 {
+	system("cls");
+	StartApp();
+}
+
+void ConsoleUI::ExitApp()
+{
+	cout << "Exiting App..." << endl;
 }
 
 void ConsoleUI::LoadTaskList()
 {
+	//load tasks from storage
+}
+
+void ConsoleUI::ShowTasksForToday()
+{
+	cout << "Today's Tasks" << endl;
+}
+
+void ConsoleUI::ShowSettings()
+{
+	cout << "Settings" << endl;
+}
+
+void ConsoleUI::ShowHelp()
+{
+	cout << "Help" << endl;
+}
+
+void ConsoleUI::ShowNewTaskCreator()
+{
+	cout << "Create new Task" << endl;
+}
+
+void ConsoleUI::ShowAllTasks()
+{
+	cout << "All Tasks" << endl;
+}
+
+void ConsoleUI::ShowTask(Task task)
+{
+	cout << "Task" << endl;
+}
+
+int ConsoleUI::getPositiveIntInput()
+{
+	int userInput = 0;
+
+	cin >> userInput;
+	cin.clear();
+	cin.get();
+
+	return userInput;
+}
+
+string ConsoleUI::getStringInput(int maxLength)
+{
+	string userInput = "";
+	
+	//clear any previous buffer
+	cin.clear();
+	cin.get();
+
+
+	getline(cin, userInput);
+
+	return userInput;
 }
