@@ -105,6 +105,8 @@ void ConsoleUI::ShowSettings()
 void ConsoleUI::ShowHelp()
 {
 	cout << "Help" << endl;
+	pauseUI();
+	return ResetConsoleView();
 }
 
 void ConsoleUI::ShowNewTaskCreator()
@@ -122,13 +124,16 @@ void ConsoleUI::ShowTask(Task task)
 	cout << "Task" << endl;
 }
 
+//////////////////////////////////////////////////////////////////////////////
+
 int ConsoleUI::getPositiveIntInput()
 {
 	int userInput = 0;
 
-	cin >> userInput;
-	cin.clear();
-	cin.get();
+	cin >> userInput; //get input from user
+
+	cin.clear();//clears previous errors
+	cin.get();  //removes \n character from buffer
 
 	return userInput;
 }
@@ -136,13 +141,18 @@ int ConsoleUI::getPositiveIntInput()
 string ConsoleUI::getStringInput(int maxLength)
 {
 	string userInput = "";
-	
+
+	getline(cin, userInput); //get input from user
+
 	//clear any previous buffer
-	cin.clear();
-	cin.get();
-
-
-	getline(cin, userInput);
+	cin.clear(); //clears previous errors
+	//cin.get(); //removes \n character from buffer
 
 	return userInput;
+}
+
+void ConsoleUI::pauseUI()
+{
+	cout << "Press any enter to continue...";
+	getStringInput();
 }

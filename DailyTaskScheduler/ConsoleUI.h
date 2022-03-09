@@ -33,4 +33,5 @@ class ConsoleUI
 		//private helper functions
 		int getPositiveIntInput();       //get positive integer value from cin.
 		string getStringInput(int maxLength = 0); //get string from cin of set max length. 0 meaning no limit.
+		void pauseUI(); //shows press enter to continue
 };
