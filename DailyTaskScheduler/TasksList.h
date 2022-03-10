@@ -10,22 +10,21 @@ using namespace std;
 
 class TasksList
 {
-    public:
-        TasksList();
-        virtual ~TasksList();
+public:
+	TasksList();
+	virtual ~TasksList();
 
-        void InsertTask(Task newTask);
-        void DeleteOldTasks();
-        void DeleteTask(Task deleteTask);
+	void InsertTask(Task newTask);
+	void DeleteOldTasks();
+	void DeleteTask(Task deleteTask);
 
-        vector<Task> GetTasksForToday();
-        vector<Task> GetAllTasks();
+	vector<Task> GetTasksForToday();
+	vector<Task> GetAllTasks();
 
-        void SetTaskList(vector<Task> taskList);
+	void SetTaskList(vector<Task> taskList);
 
-    protected:
+protected:
 
-    private:
-        vector<Task> tasksList;
+private:
+	vector<Task> tasksList;
 };
-

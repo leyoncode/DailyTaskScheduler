@@ -4,12 +4,11 @@
 
 class DataStorage
 {
-	public:
-		DataStorage();
-		virtual ~DataStorage();
-		TasksList GetTaskList();
-		void SaveTaskList();
-	private:
-		TasksList tasksList;
+public:
+	DataStorage();
+	virtual ~DataStorage();
+	TasksList GetTaskList();
+	void SaveTaskList();
+private:
+	TasksList tasksList;
 };
-

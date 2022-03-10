@@ -43,30 +43,30 @@ void ConsoleUI::HandleMenuSelection()
 
 		//get input for menu item selection
 		int selection = getPositiveIntInput();
-		
+
 		//check if valid input and go to entry
 		if (selection > 0 && selection <= 6)
 		{
 			switch (selection)
 			{
-				case 1:
-					ShowTasksForToday();
-					break;
-				case 2:
-					ShowNewTaskCreator();
-					break;
-				case 3:
-					ShowAllTasks();
-					break;
-				case 4:
-					ShowSettings();
-					break;
-				case 5:
-					ShowHelp();
-					break;
-				case 6:
-					ExitApp();
-					break;
+			case 1:
+				ShowTasksForToday();
+				break;
+			case 2:
+				ShowNewTaskCreator();
+				break;
+			case 3:
+				ShowAllTasks();
+				break;
+			case 4:
+				ShowSettings();
+				break;
+			case 5:
+				ShowHelp();
+				break;
+			case 6:
+				ExitApp();
+				break;
 			}
 		}
 		else
@@ -133,7 +133,7 @@ int ConsoleUI::getPositiveIntInput()
 	cin >> userInput; //get input from user
 
 	cin.clear();//clears previous errors
-	cin.get();  //removes \n character from buffer
+	cin.get();  //removes \n character from buffer left after cin gets the integer input
 
 	return userInput;
 }

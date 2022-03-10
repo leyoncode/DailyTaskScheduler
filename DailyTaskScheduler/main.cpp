@@ -5,8 +5,8 @@
 
 int main()
 {
-    ConsoleUI consoleApp; //init cli
-    consoleApp.StartApp();
-    
-    cout << "Exiting App" << endl;
+	ConsoleUI consoleApp; //init cli
+	consoleApp.StartApp();
+
+	cout << "Exiting App" << endl;
 }

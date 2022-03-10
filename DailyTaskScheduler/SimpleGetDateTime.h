@@ -12,22 +12,21 @@ using namespace std;
 //could've used a struct here, but didn't do that to keep things simple.
 class SimpleGetDateTime
 {
-    public:
-        SimpleGetDateTime();
-        virtual ~SimpleGetDateTime();
+public:
+	SimpleGetDateTime();
+	virtual ~SimpleGetDateTime();
 
-        static unsigned int GetDayOfMonth();
-        static unsigned int GetMonth();
-        static unsigned int GetYear();
-        static unsigned int GetHour();
-        static unsigned int GetMinute();
+	static unsigned int GetDayOfMonth();
+	static unsigned int GetMonth();
+	static unsigned int GetYear();
+	static unsigned int GetHour();
+	static unsigned int GetMinute();
 
-        static SimpleDate GetSimpleDate();
-        static SimpleTime GetSimpleTime();
-        //static SimpleDate GetDateAfter(unsigned int days, unsigned int months, unsigned int years); //give date after x days, y months, z years
+	static SimpleDate GetSimpleDate();
+	static SimpleTime GetSimpleTime();
+	//static SimpleDate GetDateAfter(unsigned int days, unsigned int months, unsigned int years); //give date after x days, y months, z years
 
-    protected:
+protected:
 
-    private:
+private:
 };
-
