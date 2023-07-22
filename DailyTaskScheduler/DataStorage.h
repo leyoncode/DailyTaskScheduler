@@ -7,8 +7,10 @@ class DataStorage
 public:
 	DataStorage();
 	virtual ~DataStorage();
-	TasksList GetTaskList();
-	void SaveTaskList();
+	void LoadData(); //load data into taskslist
+	TasksList GetTaskList(); //get all tasks
+	TasksList* GetTaskListPtr(); //get tasksList pointer
+	void SaveTaskList(TasksList tasksList); //save data to disk
 private:
-	TasksList tasksList;
+	TasksList tasksList; //keep data in ram for faster access
 };

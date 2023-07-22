@@ -48,7 +48,7 @@ protected:
 
 private:
 	string taskName; //mandatory
-	SimpleDate date; //mandatory
+	SimpleDate date; //optional
 	SimpleTime startHour; //optional
 	SimpleTime endHour;   //optional
 	Repeat repeat = Repeat::RepeatNever; //mandatory. set in constructor
