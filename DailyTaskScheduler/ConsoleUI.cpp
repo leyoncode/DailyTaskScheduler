@@ -85,7 +85,7 @@ void ConsoleUI::InvalidInputResetConsoleView()
 {
 	cout << "Invalid Input!" << endl;
 	PauseUI();
-	ResetConsoleView()
+	ResetConsoleView();
 }
 
 void ConsoleUI::ResetConsoleView()
@@ -150,9 +150,14 @@ void ConsoleUI::ShowNewTaskCreator()
 	//create Task objects based on documentation in Task.h
 	if (userInput == 1)
 	{
+		cout << "Enter task name: " << endl;
 		string taskName = GetStringInput();
+
+		cout << "Enter day (1-31)" << endl;
 		unsigned int dayOfMonth = GetIntInput();
+		cout << "Enter month (1-12)" << endl;
 		unsigned int month = GetIntInput();
+		cout << "Enter year" << endl;
 		unsigned int year = GetIntInput();
 
 		Task newTask(taskName, dayOfMonth, month, year);
@@ -161,6 +166,7 @@ void ConsoleUI::ShowNewTaskCreator()
 	}
 	else if (userInput == 2)
 	{
+		cout << "Enter task name: " << endl;
 		string taskName = GetStringInput();
 
 		Task newTask(taskName);
@@ -169,9 +175,10 @@ void ConsoleUI::ShowNewTaskCreator()
 	}
 	else if (userInput == 3)
 	{
+		cout << "Enter task name: " << endl;
 		string taskName = GetStringInput();
 
-		cout << "Which days in the week to repeat the task?" << endl;
+		cout << "Which day in the week to repeat the task?" << endl;
 		cout << "1) SUN" << endl;
 		cout << "2) MON" << endl;
 		cout << "3) TUE" << endl;
@@ -238,9 +245,28 @@ void ConsoleUI::ShowNewTaskCreator()
 	}
 	else if (userInput == 4)
 	{
+		cout << "Enter task name: " << endl;
+		string taskName = GetStringInput();
+
+		cout << "Enter which day of the month to repeat the task (1-31): " << endl;
+		unsigned int dayOfMonth = GetIntInput();
+
+		Task newTask(taskName, dayOfMonth);
+		tasksList->InsertTask(newTask); //add task to storage
 	}
 	else if (userInput == 5)
 	{
+		cout << "Enter task name: " << endl;
+		string taskName = GetStringInput();
+
+		cout << "Enter which day of the month to repeat the task (1-31): " << endl;
+		unsigned int dayOfMonth = GetIntInput();
+
+		cout << "Enter which month of the year to repeat the task (1-12): " << endl;
+		unsigned int month = GetIntInput();
+
+		Task newTask(taskName, dayOfMonth, month);
+		tasksList->InsertTask(newTask); //add task to storage
 	}
 	else
 	{
