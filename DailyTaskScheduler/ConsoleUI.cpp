@@ -88,9 +88,14 @@ void ConsoleUI::InvalidInputResetConsoleView()
 	ResetConsoleView();
 }
 
-void ConsoleUI::ResetConsoleView()
+void ConsoleUI::ClearScreen()
 {
 	system("cls"); //Windows OS only
+}
+
+void ConsoleUI::ResetConsoleView()
+{
+	ClearScreen();
 	StartApp();
 }
 
@@ -102,21 +107,35 @@ void ConsoleUI::ExitApp()
 
 void ConsoleUI::ShowTasksForToday()
 {
+	ClearScreen();
 	cout << "Today's Tasks" << endl << endl;
+	cout << "----------------------\n" << endl;
 
 	//get todays tasks
 	vector<Task> todaysTasks = dataStorage.GetTaskList().GetTasksForToday();
 
-	//loop over them and print them
-	for (Task task : todaysTasks)
+	if (todaysTasks.size() < 1)
 	{
-		ShowTask(task);
+		cout << "No tasks for today!" << endl;
 	}
+	else
+	{
+		//loop over them and print them
+		for (Task task : todaysTasks)
+		{
+			ShowTask(task);
+		}
+	}
+
+	PauseUI();
+	ResetConsoleView();
 }
 
 void ConsoleUI::ShowSettings()
 {
 	cout << "Settings" << endl;
+	PauseUI();
+	ResetConsoleView();
 }
 
 void ConsoleUI::SettingsDeleteTask()
@@ -270,30 +289,47 @@ void ConsoleUI::ShowNewTaskCreator()
 	}
 	else
 	{
-		InvalidInputResetConsoleView();
+		return InvalidInputResetConsoleView(); //stop executing rest of the code
 	}
+
+	cout << "Task added successfully" << endl;
+	PauseUI();
+	ResetConsoleView();
 }
 
 void ConsoleUI::ShowAllTasks()
 {
-	cout << "All Tasks" << endl;
+	ClearScreen();
+	cout << "All Tasks:" << endl;
+	cout << "----------------------\n" << endl;
 
 	//get all tasks
 	vector<Task> todaysTasks = dataStorage.GetTaskList().GetAllTasks();
 
-	//loop over them and print them
-	for (Task task : todaysTasks) {
-		ShowTask(task);
+	if (todaysTasks.size() < 1)
+	{
+		cout << "No tasks available :(" << endl;
 	}
+	else
+	{
+		//loop over them and print them
+		for (Task task : todaysTasks) {
+			ShowTask(task);
+		}
+	}
+
+	PauseUI();
+	ResetConsoleView();
 }
 
 void ConsoleUI::ShowTask(Task task)
 {
-	cout << "Task" << endl;
-	cout << task.GetName() << endl;
+	cout << "" << endl;
+	cout << "Task Name: " << task.GetName() << endl;
 	cout << "Date: " << task.GetDate().GetDate() << endl;
 	cout << "Start time: " << task.GetStartHour().GetTime12() << endl;
 	cout << "Start time: " << task.GetEndHour().GetTime12() << endl;
+	cout << "----------------------\n" << endl;
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -325,6 +361,6 @@ string ConsoleUI::GetStringInput(int maxLength)
 
 void ConsoleUI::PauseUI()
 {
-	cout << "Press any enter to continue...";
+	cout << "\n\nPress any enter to continue...";
 	GetStringInput();
 }

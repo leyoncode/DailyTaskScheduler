@@ -2,7 +2,7 @@
 
 Task::Task(string taskName, unsigned int dayOfMonth, unsigned int month, unsigned int year)
 {
-	this->taskName = taskName;
+	this->SetName(taskName);
 	this->repeat = repeat;
 	this->date.SetDate(dayOfMonth, month, year);
 	this->repeat = Repeat::RepeatNever;
@@ -10,24 +10,26 @@ Task::Task(string taskName, unsigned int dayOfMonth, unsigned int month, unsigne
 
 Task::Task(string taskName)
 {
-	this->taskName = taskName;
+	this->SetName(taskName);
 	this->repeat = Repeat::RepeatDaily;
 }
 
 Task::Task(string taskName, DaysOfWeek dayOfWeek)
 {
-	this->taskName = taskName;
+	this->SetName(taskName);
 	this->repeat = Repeat::RepeatWeekly;
 }
 
 Task::Task(string taskName, unsigned int dayOfMonth)
 {
+	this->SetName(taskName);
 	this->date.SetDate(dayOfMonth, 0, 0);
 	this->repeat = Repeat::RepeatMonthly;
 }
 
 Task::Task(string taskName, unsigned int dayOfMonth, unsigned int month)
 {
+	this->SetName(taskName);
 	this->date.SetDate(dayOfMonth, month, 0);
 	this->repeat = Repeat::RepeatYearly;
 }
@@ -44,7 +46,13 @@ string Task::GetName()
 
 void Task::SetName(string taskName)
 {
-	this->taskName = taskName;
+	if (taskName.length() < 1) {
+		this->taskName = "No Name";
+	}
+	else
+	{
+		this->taskName = taskName;
+	}
 }
 
 void Task::SetDate(unsigned int dayOfMonth, unsigned int month, unsigned int year)

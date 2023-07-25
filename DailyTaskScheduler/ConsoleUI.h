@@ -17,11 +17,12 @@ class ConsoleUI
 public:
 	ConsoleUI();
 	virtual ~ConsoleUI();
-	void StartApp();
+	void StartApp(); //to start or restart the app.
+	void ClearScreen();
 	void ResetConsoleView();
 private:
-	DataStorage dataStorage; //load and save data from disk. holds TasksList
-	TasksList* tasksList; //pointer to tasksList inside dataStorage for easy access. dereference use like (*tasksList)
+	DataStorage dataStorage; //load and save data from disk. holds TasksList.
+	TasksList* tasksList; //pointer to tasksList inside dataStorage for easy access. dereference use like (*tasksList).
 
 	void ShowHeader();          //shows header texts.
 	void ShowMenu();            //shows menu used to navigate the app.
@@ -38,5 +39,5 @@ private:
 	//private helper functions
 	int GetIntInput();       //get positive integer value from cin.
 	string GetStringInput(int maxLength = 0); //get string from cin of set max length. 0 meaning no limit.
-	void PauseUI(); //shows press enter to continue
+	void PauseUI(); //shows press enter to continue.
 };
